@@ -1,7 +1,10 @@
 from msal import PublicClientApplication
+import os
+from dotenv import load_dotenv
 
-CLIENT_ID = "TU_CLIENT_ID_DELEGATED"
-TENANT_ID = "TU_TENANT_ID"
+load_dotenv()
+CLIENT_ID = os.getenv("CLIENT_ID_DELEGATED")
+TENANT_ID = os.getenv("TENANT_ID")
 AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
 SCOPES = ["https://graph.microsoft.com/.default"]
 
@@ -21,3 +24,6 @@ def obtener_token_device_code():
         raise RuntimeError(f"Error en autenticación: {result.get('error_description')}")
 
     return result["access_token"]
+
+if __name__ == "__main__":
+    print(obtener_token_device_code())

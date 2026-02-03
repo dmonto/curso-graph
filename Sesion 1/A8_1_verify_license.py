@@ -31,7 +31,7 @@ def verificar_licencia_usuario(user_id, token):
         
         # Determinar nivel
         sku_names = [lic.get("skuPartNumber", "").upper() for lic in licencias]
-        
+
         if "E5" in str(sku_names):
             nivel = "🔴 E5 - PREMIUM (Acceso total)"
         elif "E3" in str(sku_names):
@@ -52,6 +52,5 @@ def verificar_licencia_usuario(user_id, token):
         print(f"❌ Error: {response.status_code}")
         return None
 
-# USO (pseudocódigo):
 token = obtener_token_app_only()
-verificar_licencia_usuario("user@company.com", token)
+verificar_licencia_usuario("diego@deltaintart.onmicrosoft.com", token)

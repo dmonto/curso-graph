@@ -16,5 +16,9 @@ async def obtener_muchos_usuarios(user_ids, token, max_concurrent=10):
         tasks = [fetch_user(session, uid, token) for uid in user_ids]
         return await asyncio.gather(*tasks)
 
-# Uso:
-# users = asyncio.run(obtener_muchos_usuarios(["id1","id2","id3"], token))
+if __name__ == "__main__":
+    # Obtener token app_only
+    # Incluir user_ids
+    # users = asyncio.run(obtener_muchos_usuarios(["id1","id2","id3"], token))
+    # Mostrar Datos
+    pass
