@@ -1,5 +1,8 @@
 .env
-Sesion 2
+Sesion 3
 *.log
 *.json
 curso-graph
+__pycache__/
+*.zip
+*.txt

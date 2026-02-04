@@ -53,4 +53,4 @@ def verificar_licencia_usuario(user_id, token):
         return None
 
 token = obtener_token_app_only()
-verificar_licencia_usuario("diego@deltaintart.onmicrosoft.com", token)
+verificar_licencia_usuario("diego.montoliu@cursograph.onmicrosoft.com", token)
