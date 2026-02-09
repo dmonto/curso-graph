@@ -22,4 +22,4 @@ if __name__ == "__main__":
     # Incluir user_ids
     token = obtener_token_app_only()
     users = asyncio.run(obtener_muchos_usuarios(["9c16974b-bf01-4a0d-9f51-22a226caa037","9c8c7f75-6580-4395-8d08-22e9b354a766","ac54235c-ffb7-4c46-bff5-5dff79f32495"], token))
-    print(users)
+    print([u["displayName"] for u in users])
