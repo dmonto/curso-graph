@@ -1,6 +1,7 @@
 .env
-Sesion 4
 Sesion 5
+Sesion 6
+Sesion 7
 *.log
 *.json
 curso-graph
@@ -8,3 +9,5 @@ __pycache__/
 *.zip
 *.txt
 *.bin
+*.csv
+*.json
