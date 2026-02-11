@@ -25,11 +25,12 @@ def get_app_token():
 
 def resolve_group(group_name: str):
     token = get_app_token()
-    headers = {"Authorization": f"Bearer {token}"}
+    headers = {"Authorization": f"Bearer {token}", "ConsistencyLevel": "eventual"}
     
     # Filtrar grupos por nombre exacto o startsWith
     params = {
-        "$filter": f"displayName eq '{group_name}'",
+        "$search": f'"displayName:{group_name}"',
+        "$count": "true",
         "$select": "id,displayName,mail,groupTypes",
     }
     
@@ -46,6 +47,7 @@ def resolve_group(group_name: str):
         print(f"No se encontró grupo: {group_name}")
         return None
     
+    print(groups)
     group = groups[0]
     print(f"✅ Resuelto grupo: {group['displayName']} (ID: {group['id']})")
     return group["id"]
@@ -72,6 +74,6 @@ def list_group_members(group_id: str):
         print(f"  {m['id']} | {m['displayName']}")
 
 if __name__ == "__main__":
-    group_id = resolve_group("GRUPO FUERTES - EL POZO CURSO")
+    group_id = resolve_group("CURSO")
     if group_id:
         list_group_members(group_id)

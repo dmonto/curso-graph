@@ -33,7 +33,7 @@ def update_user_profile():
     
     # Datos a actualizar: solo los cambios
     update_data = {
-        "jobTitle": "Ingeniero 10x"
+        "jobTitle": "Ingeniero MS Graph"
     }
     
     resp = requests.patch(

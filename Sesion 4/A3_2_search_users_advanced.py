@@ -51,7 +51,7 @@ def search_users_by_name(name_fragment: str):
     print(f"Resultados en esta página: {len(data.get('value', []))}\n")
     
     for u in data.get("value", []):
-        print(f"  {u['id']} | {u['displayName']} | {u['userPrincipalName']}")
+        print(f"  {u['id']} | {u['displayName']} | {u['userPrincipalName']} | {u['mail']}")
 
 if __name__ == "__main__":
-    search_users_by_name("Juan")
+    search_users_by_name("Test")

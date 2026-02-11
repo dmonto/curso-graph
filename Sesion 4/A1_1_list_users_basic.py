@@ -38,7 +38,8 @@ def list_users(top: int = 10):
     )
     resp.raise_for_status()
     for u in resp.json().get("value", []):
+        print(u.keys())
         print(u["id"], "-", u["displayName"], "-", u["userPrincipalName"], "-", u.get("mail"))
 
 if __name__ == "__main__":
-    list_users()
+    list_users(15)

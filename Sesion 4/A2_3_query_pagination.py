@@ -56,6 +56,7 @@ def iterate_all_users(max_pages: int = 3):  # limitar para demo
         
         # Siguiente página
         url = data.get("@odata.nextLink")  # None si no hay más
+        print(url)
     
     print(f"\nTotal recuperados: {total_users} usuarios")
 

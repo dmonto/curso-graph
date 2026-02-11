@@ -8,7 +8,7 @@ load_dotenv()
 CLIENT_ID = os.getenv("CLIENT_ID_APPONLY")
 TENANT_ID = os.getenv("TENANT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-GROUP_ID = os.getenv("GROUP_ID")
+GROUP_ID = "636f8bbc-026b-42e4-9906-99b3133a3d30"
 USER_ID = os.getenv("USER_ID")  # usuario a añadir/quitar
 
 AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
@@ -76,5 +76,5 @@ def remove_member_from_group():
 if __name__ == "__main__":
     print("Añadiendo miembro...")
     add_member_to_group()
-    print("\nRemoviendo miembro...")
-    remove_member_from_group()
+    #print("\nRemoviendo miembro...")
+    #remove_member_from_group()

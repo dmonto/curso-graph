@@ -1,5 +1,4 @@
 .env
-Sesion 5
 Sesion 6
 Sesion 7
 *.log
@@ -11,3 +10,4 @@ __pycache__/
 *.bin
 *.csv
 *.json
+*.pdf
