@@ -106,11 +106,13 @@ if __name__ == "__main__":
     
     # Listar próximos eventos
     events = list_upcoming_events(token, days_ahead=14)
-    
+    print(events)
+
     if events:
         # Actualizar el primero
         event_id = events[0]['id']
-        update_event(token, event_id, subject=f"{events[0]['subject']} (UPDATED)")
+        print(event_id)
+        #update_event(token, event_id, subject=f"{events[0]['subject']} (UPDATED)")
         
         # Cancelar (comentado por seguridad)
-        # cancel_event(token, event_id, comment="Cambio de planes")
+        cancel_event(token, event_id, comment="Cambio de planes")

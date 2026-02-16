@@ -23,14 +23,16 @@ def get_recurring_event_instances(access_token, event_id, start_date, end_date):
     response = requests.get(url, headers=headers, params=params)
     
     if response.status_code == 200:
+        
         return response.json().get("value", [])
     else:
+        print(response.json())
         return []
 
 # Uso
 start = datetime.now(timezone.utc)
 end = start + timedelta(days=30)
 
-instances = get_recurring_event_instances(token, "event-id-here", start, end)
+instances = get_recurring_event_instances(token, "AQMkAGZhYjEyMzRlLTg3ZWUALTQ3Y2YtYmVmMi1jMmJjOGEzZDNiODEARgAAA36WVQUwIBNMgqNGWhZuIDMHAKwVWMEnomVFsrEp96myWR8AAAIBDQAAAKwVWMEnomVFsrEp96myWR8AAAI4gQAAAA==", start, end)
 for instance in instances:
     print(f"Instancia: {instance['subject']} en {instance['start']['dateTime']}")

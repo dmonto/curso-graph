@@ -118,7 +118,6 @@ if __name__ == "__main__":
         subject="Documentos Importantes",
         body_text="Adjunto encontrarás los documentos solicitados.",
         file_paths=[
-            "report.pdf",
-            "data.xlsx",
+            "Sesion 1.zip"
         ],
     )

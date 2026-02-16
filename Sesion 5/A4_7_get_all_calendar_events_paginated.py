@@ -41,7 +41,7 @@ def get_all_calendar_events_paginated(access_token, start_date, end_date, page_s
         # Comprobar si hay más páginas
         if "@odata.nextLink" in data:
             # Extraer skiptoken del nextLink
-            skip_token = data["@odata.nextLink"].split("$skiptoken=")[1]
+            skip_token = data["@odata.nextLink"].split("$skiptoken=")[0]
         else:
             break
     
@@ -49,7 +49,7 @@ def get_all_calendar_events_paginated(access_token, start_date, end_date, page_s
 
 # Uso
 start = datetime.now(timezone.utc)
-end = start + timedelta(days=30)
+end = start + timedelta(days=60)
 
-all_events = get_all_calendar_events_paginated(token, start, end, page_size=25)
+all_events = get_all_calendar_events_paginated(token, start, end, page_size=3)
 print(f"Total de eventos obtenidos: {len(all_events)}")

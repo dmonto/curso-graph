@@ -62,8 +62,7 @@ def get_filtered_calendar_events(access_token, filters):
 # Uso
 filters = {
     'start_date': '2025-01-01T00:00:00Z',
-    'end_date': '2025-01-31T23:59:59Z',
-    'category': 'Trabajo',
+    'end_date': '2026-03-01T23:59:59Z',
     'is_reminder_on': True
 }
 

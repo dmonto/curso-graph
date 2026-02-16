@@ -76,10 +76,10 @@ def create_recurring_event(
 if __name__ == "__main__":
     create_recurring_event(
         subject="Weekly Standup",
-        start_date="2025-02-17",
+        start_date="2026-02-01",
         start_time="09:00:00",
         end_time="09:30:00",
         time_zone="Europe/Madrid",
         days_of_week=["monday", "tuesday", "wednesday", "thursday", "friday"],
-        end_date="2025-12-31",
+        end_date="2026-02-28",
     )

@@ -70,8 +70,8 @@ week_events = calendar.get_week_view()
 print(f"Eventos esta semana: {len(week_events)}")
 
 # Vista mensual
-month_events = calendar.get_month_view(2025, 1)
-print(f"Eventos en enero 2025: {len(month_events)}")
+month_events = calendar.get_month_view(2026, 2)
+print(f"Eventos en febrero 2026: {len(month_events)}")
 
 # Eventos de hoy
 today_events = calendar.get_today_events()

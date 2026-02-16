@@ -81,8 +81,8 @@ if __name__ == "__main__":
         subject="Team Meeting",
         start_time="2025-02-15T10:00:00",
         end_time="2025-02-15T11:00:00",
-        time_zone="America/New_York",
+        time_zone="Europe/Madrid",
         location="Conference Room B",
-        attendees=["john@contoso.com", "jane@contoso.com"],
+        attendees=["test@cursograph.onmicrosoft.com", "test@cursograph.onmicrosoft.com", "pablo.donate@cursograph.onmicrosoft.com"],
         is_online_meeting=True,
     )
