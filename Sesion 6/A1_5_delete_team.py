@@ -1,22 +1,21 @@
 import requests
 import os
-from A0_1_get_token import get_apponly_token
+from A0_1_get_token import get_delegated_token
 
 def delete_team(access_token, team_id):
     """Elimina un equipo (requiere ser propietario)."""
     
     headers = {"Authorization": f"Bearer {access_token}"}
-    
-    response = requests.delete(
-        f"https://graph.microsoft.com/v1.0/teams/{team_id}",
-        headers=headers,
-        timeout=30
+    r = requests.post(
+        f"https://graph.microsoft.com/v1.0/teams/{team_id}/archive",
+        headers=headers
     )
-    
-    print(response.json())
-    return response.status_code == 204
+    print(f"Archive: {r.status_code}")
+
+    return r.status_code == 204
 
 # USO
-token = get_apponly_token()
+SCOPES=["TeamSettings.ReadWrite.All"]
+token = get_delegated_token(SCOPES)
 team_id = os.getenv("TEAM_ID") or input("Id de Team:")
 success = delete_team(token, team_id)

@@ -38,4 +38,4 @@ team_id = os.getenv("TEAM_ID") or input("Id de Team:")
 channel_id = os.getenv("CHANNEL_ID") or input("Id de Channel:")
 messages = get_channel_messages(token, team_id, channel_id, top=20)
 for msg in messages:
-    print(f"[{msg['timestamp']}] {msg['author']}: {msg['content'][:50]}...")
+    print(f"[{msg['timestamp']}/{msg['id']}] {msg['author']}: {msg['content'][:50]}...")

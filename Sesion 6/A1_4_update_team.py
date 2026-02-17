@@ -25,6 +25,6 @@ team_id = os.getenv("TEAM_ID") or input("Id de Team:")
 update_team(
     token,
     team_id,
-    displayName="Nuevo nombre",
-    description="Nueva descripción"
+    displayName="Team del 16_Feb",
+    description="Descripción"
 )

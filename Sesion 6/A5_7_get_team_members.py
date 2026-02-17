@@ -10,10 +10,10 @@ def get_team_members(access_token, team_id):
     response = requests.get(
         f"https://graph.microsoft.com/v1.0/teams/{team_id}/members",
         headers=headers,
-        params={"$select": "id,displayName,email,roles"},
+        params={"$select": "id,displayName,roles"},
         timeout=30
     )
-    
+    print(response.json())
     if response.status_code == 200:
         members = response.json().get("value", [])
         return [
@@ -34,4 +34,4 @@ team_id = os.getenv("TEAM_ID") or input("Id de Team:")
 members = get_team_members(token, team_id)
 for member in members:
     role = "Propietario" if "owner" in member["roles"] else "Miembro"
-    print(f"- {member['name']} ({role})")
+    print(f"- {member['name']}/{member['id']} ({role})")

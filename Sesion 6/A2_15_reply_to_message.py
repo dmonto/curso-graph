@@ -1,6 +1,6 @@
 import requests
 import os
-from A0_1_get_token import get_apponly_token
+from A0_1_get_token import get_delegated_token
 
 def reply_to_message(access_token, team_id, channel_id, message_id, reply_text):
     """Responde a un mensaje específico."""
@@ -27,10 +27,11 @@ def reply_to_message(access_token, team_id, channel_id, message_id, reply_text):
     return response.status_code == 201
 
 # USO
-token = get_apponly_token()
+SCOPES=["ChannelMessage.Send"]
+token = get_delegated_token(SCOPES)
 team_id = os.getenv("TEAM_ID") or input("Id de Team:")
 channel_id = os.getenv("CHANNEL_ID") or input("Id de Channel:")
-message_id = os.getenv("MESSAGE_ID") or input("Id de Mensaje:")
+message_id = input("Id de Mensaje:")
 success = reply_to_message(
     token,
     team_id,

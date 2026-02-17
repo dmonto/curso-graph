@@ -31,6 +31,6 @@ def get_message(access_token, team_id, channel_id, message_id):
 token = get_apponly_token()
 team_id = os.getenv("TEAM_ID") or input("Id de Team:")
 channel_id = os.getenv("CHANNEL_ID") or input("Id de Channel:")
-message_id = os.getenv("MESSAGE_ID") or input("Id de Mensaje:")
+message_id = input("Id de Mensaje:")
 message = get_message(token, team_id, channel_id, message_id)
 print(f"Mensaje de {message['author']}: {message['content']}")

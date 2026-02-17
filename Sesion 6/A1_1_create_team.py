@@ -65,7 +65,7 @@ def create_team(access_token, team_name, team_description, owner_upn, visibility
 token = get_apponly_token()
 result = create_team(
     token,
-    team_name="Proyecto Especial",
+    team_name="Proyecto Especial 16-Feb",
     team_description="Equipo para proyecto estratégico",
     owner_upn="diego.montoliu@cursograph.onmicrosoft.com",
     visibility="private"

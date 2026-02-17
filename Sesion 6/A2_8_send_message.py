@@ -46,7 +46,7 @@ result = send_message(
     token,
     team_id,
     channel_id,
-    "Hola equipo, ¡esto es una prueba!"
+    "Prueba de Mensaje del 16-Feb"
 )
 
 print(f"Mensaje enviado: {result['message_id']}")

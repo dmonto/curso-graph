@@ -32,7 +32,7 @@ token = get_delegated_token(SCOPES)
 team_id = os.getenv("TEAM_ID") or input("Id de Team:")
 channel_id = os.getenv("CHANNEL_ID") or input("Id de Channel:")
 html = """
-<h2>Informe de Ventas</h2>
+<h2>Informe de Ventas de Feb-26</h2>
 <p>Las ventas del trimestre fueron <strong>excelentes</strong>.</p>
 <ul>
   <li>Q1: $100k</li>

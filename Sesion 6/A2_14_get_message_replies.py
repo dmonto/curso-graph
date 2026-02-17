@@ -31,7 +31,7 @@ def get_message_replies(access_token, team_id, channel_id, message_id):
 token = get_apponly_token()
 team_id = os.getenv("TEAM_ID") or input("Id de Team:")
 channel_id = os.getenv("CHANNEL_ID") or input("Id de Channel:")
-message_id = os.getenv("MESSAGE_ID") or input("Id de Mensaje:")
+message_id = input("Id de Mensaje:")
 replies = get_message_replies(token, team_id, channel_id, message_id)
 for reply in replies:
     print(f"  → {reply['author']}: {reply['content']}")

@@ -1,6 +1,9 @@
 import requests
 import os
 from A0_1_get_token import get_apponly_token
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_channel_details(access_token, team_id, channel_id):
     """Obtiene detalles de un canal específico."""
@@ -12,7 +15,7 @@ def get_channel_details(access_token, team_id, channel_id):
         headers=headers,
         timeout=30
     )
-    
+    print(response.json())
     if response.status_code == 200:
         ch = response.json()
         return {

@@ -1,6 +1,9 @@
 import requests
 import os
 from A0_1_get_token import get_apponly_token
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def create_channel(access_token, team_id, channel_name, channel_description=""):
     """Crea un nuevo canal en un equipo."""
@@ -22,7 +25,7 @@ def create_channel(access_token, team_id, channel_name, channel_description=""):
         json=payload,
         timeout=30
     )
-    
+    print(response.json())
     if response.status_code == 201:
         channel = response.json()
         return {
@@ -35,11 +38,11 @@ def create_channel(access_token, team_id, channel_name, channel_description=""):
 
 # USO
 token = get_apponly_token()
-team_id = os.getenv("TEAM_ID") or input("Id de Team:")
+team_id = "12801113-b209-4db2-bf9a-835822f0f237"
 channel = create_channel(
     token,
     team_id,
-    channel_name="marketing-2",
+    channel_name="marketing-16-Feb",
     channel_description="Canal para equipo de marketing"
 )
 
