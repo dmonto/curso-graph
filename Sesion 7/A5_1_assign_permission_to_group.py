@@ -16,7 +16,7 @@ def assign_permission_to_group(access_token, drive_id, item_id, group_email, rol
         "recipients": [{"email": group_email}],
         "roles": [role],
         "message": "Grupo con acceso a archivo",
-        "sendNotification": True
+        "sendInvitation": True
     }
     
     response = requests.post(

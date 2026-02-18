@@ -30,7 +30,7 @@ def upload_simple(access_token, drive_id, folder_id, file_path):
         data=file_content,
         timeout=60
     )
-    
+    print(response.json())
     if response.status_code in [201, 200]:
         uploaded_file = response.json()
         return {

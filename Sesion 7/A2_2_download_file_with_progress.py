@@ -30,7 +30,7 @@ def download_file_with_progress(access_token, drive_id, item_id, output_path):
     
     with open(output_path, 'wb') as f:
         with tqdm(total=file_size, unit='B', unit_scale=True) as pbar:
-            for chunk in response.iter_content(chunk_size=8192):
+            for chunk in response.iter_content(chunk_size=28):
                 if chunk:
                     f.write(chunk)
                     pbar.update(len(chunk))

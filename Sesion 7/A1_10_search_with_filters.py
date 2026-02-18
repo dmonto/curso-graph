@@ -59,8 +59,7 @@ drive_id = os.getenv("DRIVE_ID") or input("Id de Drive:")
 results = search_with_filters(
     token,
     drive_id,
-    name_contains="sesion",
-    file_type="md"
+    size_min=1
 )
 
 print(f"Encontrados: {len(results)}")

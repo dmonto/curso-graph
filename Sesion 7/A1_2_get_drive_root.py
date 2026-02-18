@@ -34,7 +34,7 @@ def get_drive_root(access_token, drive_id):
 
 # USO
 token = get_apponly_token()
-drive_id = os.getenv("DRIVE_ID") or input("Id de Drive:")
+drive_id = input("Id de Drive:")
 root = get_drive_root(token, drive_id)
 print(f"Raíz: {root['name']}")
 print(f"Elementos: {root['children_count']}")

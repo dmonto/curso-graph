@@ -23,9 +23,11 @@ def create_anonymous_link(access_token, drive_id, item_id, permission_type="view
         json=payload,
         timeout=30
     )
-    
-    if response.status_code == 201:
+    print(response.json())
+    print(response.status_code)
+    if response.status_code in [200,201]:
         share = response.json()
+        print(share["link"])
         return {
             "status": "success",
             "url": share["link"]["webUrl"],

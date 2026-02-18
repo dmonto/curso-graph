@@ -2,6 +2,7 @@ import requests
 import os
 from A0_1_get_token import get_apponly_token
 from dotenv import load_dotenv
+from A1_2_get_drive_root import get_drive_root
 
 load_dotenv()
 
@@ -40,7 +41,7 @@ def navigate_path(access_token, drive_id, path):
 # USO
 token = get_apponly_token()
 drive_id = os.getenv("DRIVE_ID") or input("Id de Drive:")
-item = navigate_path(token, drive_id, "Documentos/Proyectos/2025")
+item = navigate_path(token, drive_id, "Meetings/marketing-j/sesion-5.md")
 if item["exists"]:
     print(f"Encontrado: {item['name']}")
 else:

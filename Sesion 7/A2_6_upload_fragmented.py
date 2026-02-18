@@ -58,7 +58,7 @@ def upload_fragmented(access_token, drive_id, folder_id, file_path, fragment_siz
             )
             print(f"Frag {fragment_num}: {response.status_code}")
 
-            if response.status_code in [200, 201]:
+            if response.status_code in [200, 201, 202]:
                 data = response.json()
                 # Si devuelve driveItem completo → FIN
                 if data.get("id") and data.get("size") == file_size:
@@ -112,7 +112,7 @@ result = upload_fragmented(
     drive_id,
     folder_id,
     "Sesion 5.zip",
-    fragment_size=1024*1024  # 1 MB
+    fragment_size=1*1024  # 1 MB
 )
 
 print(f"Cargado: {result['file_name']}")

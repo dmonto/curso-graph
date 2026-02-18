@@ -62,4 +62,5 @@ for perm in permissions:
     print(f"{perm['type'].upper()}: {perm.get('grantedTo', 'Enlace')}")
     print(f"  Rol: {perm['roles']}")
     print(f"  ID: {perm['id']}\n")
+    print(f"  Scope: {perm.get('scope')}\n")
     print(f"  Expiration: {perm.get('expirationDateTime')}\n")
