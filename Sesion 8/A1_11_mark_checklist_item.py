@@ -32,7 +32,7 @@ def mark_checklist_item(token, task_id, item_id, is_checked=True):
                           headers=patch_headers, json={"checklist": checklist})
     
     status = "✓️ completado" if is_checked else "⭕ pendiente"
-    if resp.status_code == 200:
+    if resp.status_code in [200, 204]:
         print(f"✅ '{item['title']}' → {status} (orderHint '{item['orderHint']}' preservado)")
     else:
         print(f"❌ PATCH: {resp.text}")

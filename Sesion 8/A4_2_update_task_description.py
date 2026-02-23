@@ -35,4 +35,4 @@ def update_task_description(token, task_id, etag, new_description):
 token = get_apponly_token()
 task_id = os.getenv("TASK_ID") or input("Id de Task:")
 etag = input("eTag:")
-update_task_description(token, task_id, etag, "Nueva descripción")
+update_task_description(token, task_id, etag, "Nueva descripción 2")

@@ -48,12 +48,11 @@ def create_task(access_token, plan_id, bucket_id, task_title,
 # USO
 token = get_apponly_token()
 plan_id = os.getenv("PLAN_ID") or input("Id de Plan:")
-bucket_id = os.getenv("BUCKET_ID") or input("Id de Bucket:")
 buckets = list_plan_buckets(token, plan_id)
+bucket_id = os.getenv("BUCKET_ID") or input("Id de Bucket:")
 task = create_task(
     token, plan_id, bucket_id,
     "Especificaciones técnicas",
-    assigned_to="user@empresa.com",
     due_date="2026-02-28",
     priority=1
 )

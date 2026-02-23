@@ -18,7 +18,7 @@ def create_plan_labels(access_token, plan_id, labels):
     
     # Obtener plan
     response = requests.get(
-        f"https://graph.microsoft.com/v1.0/planner/plans/{plan_id}",
+        f"https://graph.microsoft.com/v1.0/planner/plans/{plan_id}/details",
         headers=headers,
         timeout=30
     )
@@ -33,11 +33,8 @@ def create_plan_labels(access_token, plan_id, labels):
     label_definitions = {}
     
     for i, label in enumerate(labels):
-        label_id = str(i)
-        label_definitions[label_id] = {
-            "displayName": label,
-            "color": i % 6  # Colores 0-5
-        }
+        label_id = f"category{str(i+1)}"
+        label_definitions[label_id] = label
     
     # Actualizar plan con etiquetas
     headers_patch = {
@@ -47,7 +44,7 @@ def create_plan_labels(access_token, plan_id, labels):
     }
     
     response = requests.patch(
-        f"https://graph.microsoft.com/v1.0/planner/plans/{plan_id}",
+        f"https://graph.microsoft.com/v1.0/planner/plans/{plan_id}/details",
         headers=headers_patch,
         json={"categoryDescriptions": label_definitions},
         timeout=30

@@ -36,5 +36,5 @@ def create_plan(access_token, group_id, plan_title, plan_description=""):
 # USO
 token = get_apponly_token()
 group_id = os.getenv("GROUP_ID") or input("Id de Grupo:")
-plan = create_plan(token, group_id, "Proyecto Q1 2026", "Planificación trimestral")
+plan = create_plan(token, group_id, "Proyecto Diego 2026", "Planificación trimestral")
 plan_id = plan["id"]

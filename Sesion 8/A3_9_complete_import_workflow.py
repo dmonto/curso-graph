@@ -40,7 +40,7 @@ def complete_import_workflow(token, plan_id, bucket_map, label_map, csv_file):
 token = get_apponly_token()
 plan_id = os.getenv("PLAN_ID") or input("Id de Plan:")
 
-bucket_map = {"Desarrollo": "278n5_EraEKLpnELpM8ez5gAEz2i", "Testing": "N6IdX4Ff7ESv1YHXWXoqL5gAN4oj"}
+bucket_map = {"Desarrollo": "p3MU84E0GUKbVoTKzoSDY5gAJjbR", "Testing": "IT9AyBehiEqDpqhx9dVz5ZgAAAea"}
 label_map = {
     "Crítico": "0",
     "Alto": "1",

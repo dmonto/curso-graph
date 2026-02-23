@@ -64,5 +64,5 @@ add_task_reference(
     token, task_id,
     "Documento Word",
     "https://onedrive.empresa.com/archivo.docx",
-    "file"
+    "Other"
 )

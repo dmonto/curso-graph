@@ -105,4 +105,6 @@ progress = calculate_plan_progress(tasks)
 print(f"Progreso plan: {progress}%")
 print(get_overdue_tasks(tasks))
 print(calculate_workload_by_user(tasks))
-print(calculate_user_productivity(tasks))
+user_report = calculate_user_productivity(tasks)
+for email, ur in user_report.items():
+    print(email, ur["avg_progress"], ur["completion_rate"])

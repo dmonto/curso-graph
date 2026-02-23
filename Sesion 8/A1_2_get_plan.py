@@ -20,6 +20,7 @@ def get_plan(access_token, plan_id):
     
     if response.status_code == 200:
         plan = response.json()
+        print(plan)
         return {
             "id": plan.get("id"),
             "title": plan.get("title"),

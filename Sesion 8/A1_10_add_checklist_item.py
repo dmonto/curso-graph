@@ -68,5 +68,5 @@ def reset_checklist_clean(token, task_id, items):
 if __name__ == "__main__":
     token = get_apponly_token()
     task_id = input("Task ID: ")
-    items = ["1. Análisis", "2. Diseño", "3. Código", "4. Test", "5. Deploy"]
+    items = ["6. Documentación"]
     reset_checklist_clean(token, task_id, items)

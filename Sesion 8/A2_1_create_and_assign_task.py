@@ -60,6 +60,6 @@ bucket_id = os.getenv("BUCKET_ID") or input("Id de Bucket:")
 
 task = create_and_assign_task(
     token, plan_id, bucket_id,
-    "Implementar API REST",
-    "diego.montoliu@cursograph.onmicrosoft.com"
+    "Implementar API Graph Test",
+    "test@cursograph.onmicrosoft.com"
 )
